@@ -1,17 +1,30 @@
 import { Component } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
+import { ActionButtonComponent } from './action-button';
 
 @Component({
   selector: 'app-root',
   template: `
-    <h1>Hello from {{ name }}!</h1>
-    <a target="_blank" href="https://angular.dev/overview">
-      Learn more about Angular
-    </a>
+    <app-action-button
+      [active]="active"
+      [disabled]="isSaving"
+      (toggled)="onToggled($event)"
+    >
+      Action Button
+    </app-action-button>
   `,
+  imports: [
+    ActionButtonComponent
+  ]
 })
 export class App {
-  name = 'Angular';
+  active = true;
+  isSaving = true;
+
+  onToggled($event: unknown) {
+    console.log($event)
+  }
+  
 }
 
 bootstrapApplication(App);
