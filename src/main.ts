@@ -19,7 +19,7 @@ import { ActionButtonComponent } from './action-button';
 })
 export class App {
   active = true;
-  isSaving = true;
+  isSaving = false;
 
   onToggled($event: unknown) {
     console.log($event)

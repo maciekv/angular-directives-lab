@@ -3,9 +3,25 @@ import { ActionStateDirective } from "./action-state.directive";
 
 @Component({
     selector: 'app-action-button',
-    template: `<button><ng-content></ng-content></button>`,
+    template: `<ng-content></ng-content>`,
     standalone: true,
     imports: [],
+    styles: [`
+    :host {
+        color: gray;
+        cursor: pointer;
+    }
+    :host(.is-active) {
+        color: green;
+
+    }
+    :host(.disabled) {
+        background-color: lightgrey
+    }
+    `],
+    host: {
+        role: 'button',
+    },
     hostDirectives: [
         {
             directive: ActionStateDirective,

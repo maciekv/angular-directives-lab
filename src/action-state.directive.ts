@@ -17,7 +17,7 @@ export class ActionStateDirective {
     active = true;
     toggled = new EventEmitter<boolean>();
 
-    private readonly el = inject<ElementRef<HTMLElement>>(ElementRef<ElementRef>);
+    private readonly el = inject<ElementRef<HTMLElement>>(ElementRef);
 
     get _supportedDisabled() {
         const tag = this.el.nativeElement.tagName;
