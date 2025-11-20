@@ -1,3 +1,3 @@
 # angular-directives-lab
 
-[Edit in StackBlitz next generation editor ⚡️](https://stackblitz.com/~/github.com/maciekv/angular-directives-lab)
+trap: host bindings not working on the element button but working on host element
